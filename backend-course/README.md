@@ -1,5 +1,5 @@
 ## Required
-
+Setelah Melakukan git clone harus melakukan composer update atau composer install
 
 
 
