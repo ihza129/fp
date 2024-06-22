@@ -12,6 +12,6 @@ export class CoursesService {
   constructor(private http: HttpClient) {}
 
   getCourses(): Observable<Course[]> {
-    return this.http.get<Course[]>('${this.apiUrl}/courses');
+    return this.http.get<Course[]>(`${this.apiUrl}/courses`);
   }
 }

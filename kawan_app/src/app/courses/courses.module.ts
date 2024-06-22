@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-
+import { HttpClientModule } from '@angular/common/http';
 import { CoursesPageRoutingModule } from './courses-routing.module';
 
 import { CoursesPage } from './courses.page';
@@ -13,8 +13,9 @@ import { CoursesPage } from './courses.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    CoursesPageRoutingModule
+    CoursesPageRoutingModule,
+    HttpClientModule,
   ],
-  declarations: [CoursesPage]
+  declarations: [CoursesPage],
 })
 export class CoursesPageModule {}

@@ -16,19 +16,20 @@ export class CoursesPage implements OnInit {
 
   constructor(
     private coursesService: CoursesService,
-    private loadingCtrl: LoadingController,
-  ) {}
+    private loadingCtrl: LoadingController
+  ) {
+    this.courses$ = new Observable<Course[]>();
+  }
 
   async ngOnInit() {
-    const loading = await this.loadingCtrl.create({message: 'Loading...'});
+    const loading = await this.loadingCtrl.create({ message: 'Loading...' });
     loading.present();
 
     this.courses$ = this.coursesService.getCourses().pipe(
-      tap(courses => {
+      tap((courses) => {
         loading.dismiss();
         return courses;
       })
     );
   }
-
 }
