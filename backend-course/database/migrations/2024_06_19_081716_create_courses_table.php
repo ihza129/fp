@@ -11,6 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
+
+        Schema::table('enrollments', function (Blueprint $table) {
+            $table->dropForeign(['course_id']); // Adjust the foreign key name as necessary
+        });
+
+        Schema::dropIfExists('courses');
+
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('name');

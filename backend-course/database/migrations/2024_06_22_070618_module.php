@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         //
+        Schema::dropIfExists('modules');
         Schema::create('modules', function (Blueprint $table) {
             $table->id();
             $table->foreignId('course_id')->constrained()->onDelete('cascade');
@@ -26,5 +27,6 @@ return new class extends Migration
     public function down(): void
     {
         //
+        Schema::dropIfExists('modules');
     }
 };
