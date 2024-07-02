@@ -29,13 +29,11 @@ class CourseController extends Controller
     {
         $validation = Validator::make($request->all(), [
             'name' => 'required',
-            // 'courseId' => 'required',
             'imageUrl' => 'required|file|mimes:png,jpg,jpeg|max:2048',
             'description' => 'required',
             'startDate' => 'required',
             'endDate' => 'required',
         ]);
-        return $request->all();
         if ($validation->fails()) {
             return response()->json($validation->messages()->toArray(), 400);
         }
