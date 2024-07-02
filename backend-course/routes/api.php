@@ -22,5 +22,10 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/courses', [CourseController::class, 'index']);
+Route::post('/courses', [CourseController::class, 'createCourse']);
+Route::delete('/courses/{id}', [CourseController::class, 'deleteCourse']);
+Route::get('/findcourse/{id}', [CourseController::class, 'courseById']);
+Route::post('/updatecourse/{id}', [CourseController::class, 'updateCourse']);
+
 Route::post('/login', [UsersController::class, 'login']);
 Route::post('/register', [UsersController::class, 'register']);

@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
   {
@@ -33,6 +33,13 @@ const routes: Routes = [
     path: 'courses',
     loadChildren: () =>
       import('./courses/courses.module').then((m) => m.CoursesPageModule),
+  },
+  {
+    path: 'course-update/:id',
+    loadChildren: () =>
+      import('./course-update/course-update.module').then(
+        (m) => m.CourseUpdatePageModule
+      ),
   },
 ];
 

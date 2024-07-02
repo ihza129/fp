@@ -1,5 +1,8 @@
 export interface Course {
-    name : string;
-    description : string;
-    imageUrl : string;
+  id: any;
+  name: any;
+  description: any;
+  imageUrl: any;
+  startDate: any;
+  endDate: any;
 }

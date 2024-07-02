@@ -31,6 +31,7 @@ class UsersController extends Controller
         $payload = [
             'email' => $user->email,
             'exp' => time() + 60 * 60,
+            'role' => $user->role,
         ];
         $token = JWT::encode($payload, $secret, 'HS256');
         return response()->json([
@@ -38,6 +39,7 @@ class UsersController extends Controller
                 "msg" => "Login successful",
                 "name" => $user->name,
                 "email" => $user->email,
+                "role" => $user->role,
             ],
             "status_code" => 200,
             'token' => $token

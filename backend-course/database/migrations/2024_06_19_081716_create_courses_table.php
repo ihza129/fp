@@ -12,21 +12,22 @@ return new class extends Migration
     public function up(): void
     {
 
-        Schema::table('enrollments', function (Blueprint $table) {
-            $table->dropForeign(['course_id']); // Adjust the foreign key name as necessary
-        });
 
-        Schema::dropIfExists('courses');
+        Schema::disableForeignKeyConstraints();
+        // Schema::dropIfExists('courses');
 
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('courseId')->unique();
-            $table->string('imageUrl');
             $table->LongText('description')->nullable();
             $table->date('startDate');
             $table->date('endDate');
+            $table->timestamps();
         });
+
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -34,6 +35,8 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('courses');
+        Schema::enableForeignKeyConstraints();
     }
 };

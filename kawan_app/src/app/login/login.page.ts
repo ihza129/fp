@@ -68,7 +68,9 @@ export class LoginPage implements OnInit {
         // after click OK, redirect to home page
         alert.present();
         alert.onDidDismiss().then(() => {
-          window.location.href = '/home';
+          // get the token from the response
+          localStorage.setItem('token', data.token);
+          window.location.href = '/courses';
         });
       });
   }
