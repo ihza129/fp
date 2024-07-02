@@ -5,6 +5,8 @@
 </ion-header>
 
 <ion-content>
+  <ion-button (click)="tambahCourse()">Tambah Course</ion-button>
+
   <ion-list>
     <ion-card *ngFor="let course of courses$ | async">
       <ion-card-content>

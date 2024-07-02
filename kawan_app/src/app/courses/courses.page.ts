@@ -140,4 +140,8 @@ export class CoursesPage implements OnInit {
       })
       .then((alert) => alert.present());
   }
+
+  tambahCourse() {
+    window.location.href = '/tambah-courses';
+  }
 }

@@ -40,7 +40,11 @@ const routes: Routes = [
       import('./course-update/course-update.module').then(
         (m) => m.CourseUpdatePageModule
       ),
+  },  {
+    path: 'tambah-courses',
+    loadChildren: () => import('./tambah-courses/tambah-courses.module').then( m => m.TambahCoursesPageModule)
   },
+
 ];
 
 @NgModule({
