@@ -1,6 +1,20 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Courses </ion-title>
+    <ion-title>
+      <div
+        style="
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <h3 style="margin-right: 8px">Courses</h3>
+        <ion-button (click)="logout()">
+          <ion-icon name="power-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 

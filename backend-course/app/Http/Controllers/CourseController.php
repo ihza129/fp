@@ -42,7 +42,7 @@ class CourseController extends Controller
             $imageName = time() . '.' . $request->imageUrl->extension();
             $request->imageUrl->move(public_path('images'), $imageName);
             $data = $request->all();
-            $data['imageUrl'] = asset('images/') . $imageName;
+            $data['imageUrl'] = asset('images') . '/' . $imageName;
             $course = new Course();
             // insert manually without using create method
             $course->name = $data['name'];

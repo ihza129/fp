@@ -148,4 +148,30 @@ export class CoursesPage implements OnInit {
   createAdmin() {
     window.location.href = '/create-admin';
   }
+
+  async logout() {
+    // alert before logout
+    console.log('logout');
+
+    const alert = await this.alertController.create({
+      header: 'Logout',
+      message: 'Are you sure you want to logout?',
+      buttons: [
+        {
+          text: 'Yes',
+          handler: async () => {
+            // logout
+            localStorage.removeItem('token');
+            window.location.href = '/login';
+          },
+        },
+        {
+          text: 'No',
+          role: 'cancel',
+        },
+      ],
+    });
+
+    await alert.present();
+  }
 }
