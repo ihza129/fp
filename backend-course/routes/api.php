@@ -29,3 +29,4 @@ Route::post('/updatecourse/{id}', [CourseController::class, 'updateCourse']);
 
 Route::post('/login', [UsersController::class, 'login']);
 Route::post('/register', [UsersController::class, 'register']);
+Route::post('/register-admin', [UsersController::class, 'registerAdmin']);

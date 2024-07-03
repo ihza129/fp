@@ -144,4 +144,8 @@ export class CoursesPage implements OnInit {
   tambahCourse() {
     window.location.href = '/tambah-courses';
   }
+
+  createAdmin() {
+    window.location.href = '/create-admin';
+  }
 }

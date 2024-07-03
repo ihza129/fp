@@ -40,9 +40,21 @@ const routes: Routes = [
       import('./course-update/course-update.module').then(
         (m) => m.CourseUpdatePageModule
       ),
-  },  {
+  },
+  {
     path: 'tambah-courses',
-    loadChildren: () => import('./tambah-courses/tambah-courses.module').then( m => m.TambahCoursesPageModule)
+    loadChildren: () =>
+      import('./tambah-courses/tambah-courses.module').then(
+        (m) => m.TambahCoursesPageModule
+      ),
+  },
+  {
+    path: 'tabs',
+    loadChildren: () =>
+      import('./component/tabs/tabs.module').then((m) => m.TabsPageModule),
+  },  {
+    path: 'create-admin',
+    loadChildren: () => import('./create-admin/create-admin.module').then( m => m.CreateAdminPageModule)
   },
 
 ];

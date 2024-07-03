@@ -69,4 +69,29 @@ class UsersController extends Controller
             'status_code' => 200,
         ]);
     }
+
+    public function registerAdmin(Request $request)
+    {
+        $validation = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required',
+        ]);
+
+        if ($validation->fails()) {
+            return response()->json($validation->messages()->toArray(), 400);
+        }
+
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = password_hash($request->password, PASSWORD_DEFAULT);
+        $user->role = 'admin';
+        $user->save();
+
+        return response()->json([
+            'message' => 'Admin created',
+            'status_code' => 200,
+        ]);
+    }
 }
