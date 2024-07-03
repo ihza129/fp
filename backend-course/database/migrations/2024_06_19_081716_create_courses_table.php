@@ -15,11 +15,14 @@ return new class extends Migration
 
         Schema::disableForeignKeyConstraints();
         // Schema::dropIfExists('courses');
-
+        //delete table courseId if exists
+        Schema::table('courses', function (Blueprint $table) {
+            $table->dropColumn('courseId');
+        });
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('courseId')->unique();
+            $table->string('imageUrl');
             $table->LongText('description')->nullable();
             $table->date('startDate');
             $table->date('endDate');
