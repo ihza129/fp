@@ -56,6 +56,10 @@ const routes: Routes = [
     path: 'create-admin',
     loadChildren: () => import('./create-admin/create-admin.module').then( m => m.CreateAdminPageModule)
   },
+  {
+    path: 'module',
+    loadChildren: () => import('./module/module.module').then( m => m.ModulePageModule)
+  },
 
 ];
 
